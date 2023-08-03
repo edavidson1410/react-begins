@@ -1,0 +1,10 @@
+.links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-right: 40px;
+    background-color: #6EA4BF;
+    margin: 0;
+    height: 75px;
+}
