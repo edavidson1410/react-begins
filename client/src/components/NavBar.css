@@ -4,6 +4,7 @@
     align-items: center;
     gap: 25px;
     padding-right: 40px;
+    padding-left: 40px;
     background-color: #6EA4BF;
     margin: 0;
     height: 75px;
@@ -13,4 +14,14 @@
 img {
     height: 50px;
 
+}
+
+/* link styles */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gold;
 }

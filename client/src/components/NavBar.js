@@ -4,6 +4,7 @@ import logo from "../imgs/reactLogo.png"
 
 const links = ["", "counter", "weather"]
 
+
 export const NavBar = () => {
 
     return (
