@@ -25,3 +25,8 @@ a {
 a:hover {
     color: gold;
 }
+
+/* log in */
+#loginLink {
+    margin-left: auto;
+}

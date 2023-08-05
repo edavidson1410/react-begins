@@ -4,15 +4,12 @@ import "./Weather.css";
 
 export default function Weather() {
 
-    let error = false;
-    const errorDiv = document.getElementById("error");
+    const [error, setError] = useState("")
 
     let input;
     const [zipCode, setZipCode] = useState("63109");
     useEffect(() => {
-            
             input = document.getElementById("userInput");
-            console.log(zipCode)
     })
 
     const [city, setCity] = useState("Unknown");
@@ -41,30 +38,23 @@ export default function Weather() {
         setIcon(weatherIcon);
     };
 
-    function errorMessage() {
-        if(error) {
-            errorDiv.innerHTML = "Please enter a valid zipcode."
-            error = false;
-        } else errorDiv.innerHTML = "";
-    }
 
     fetch(`http://api.weatherapi.com/v1/current.json?key=1dd34d02c3a94e5285903838230408&q=${zipCode}&aqi=no`).then(response => {
         if(response.ok) return response.json()
         else { throw new Error;}
     }).then(response => {
-        errorMessage();
+        setError("")
         displayCity(response)
         displayWeather(response)
     }).catch(() => {
-        error = true;
-        errorMessage()
+        setError("That is not a valid location.")
     });
 
     return(
         <div className="weatherApp">
             <input type="text" maxlenght="5" id="userInput"></input>
             <button onClick={() => setZipCode(input.value)}>Submit</button>
-            <div id="error"></div>
+            <div id="error">{error}</div>
             <div className="location">
                 <div id="city">{city}</div>
                 <div id="region">{region}</div>

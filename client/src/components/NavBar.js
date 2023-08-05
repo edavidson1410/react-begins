@@ -8,16 +8,21 @@ const links = ["", "counter", "weather"]
 export const NavBar = () => {
 
     return (
-        <div className="navBar">
-            {/* <img src={logo} alt="react Logo" />
-            {links.map((link) => (
-                <Link key={link} to="/">{link}</Link>
-            ))} */}
+        <>
+            <div className="navBar">
+                {/* <img src={logo} alt="react Logo" />
+                {links.map((link) => (
+                    <Link key={link} to="/">{link}</Link>
+                ))} */}
+                
+                <img src={logo} alt="react Logo" />
+                <Link to="/">Home</Link>
+                <Link to="/counter">Counter</Link>
+                <Link to="/weather">Weather</Link>
+                
+                <div id="loginLink">Log in</div>
+            </div>
             
-            <img src={logo} alt="react Logo" />
-            <Link to="/">Home</Link>
-            <Link to="/counter">Counter</Link>
-            <Link to="/weather">Weather</Link>
-        </div>
+        </>
     )
 }
